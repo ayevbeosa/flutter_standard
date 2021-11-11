@@ -41,7 +41,6 @@ class Flutterwave {
       this.meta,
       this.style});
 
-
   /// Starts Standard Transaction
   Future<ChargeResponse> charge() async {
     final request = StandardRequest(
@@ -64,7 +63,6 @@ class Flutterwave {
         builder: (context) => PaymentWidget(
           request: request,
           style: style ?? FlutterwaveStyle(),
-          mainContext: context,
         ),
       ),
     );
