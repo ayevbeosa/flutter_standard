@@ -1,4 +1,5 @@
 class Utils {
+  static const DEFAULT_URL = "https://flutterwave.com";
   static const _PROD_BASE_URL = "https://api.ravepay.co/v3/sdkcheckout/";
   static const String STANDARD_PAYMENT = "payments";
   static const _DEBUG_BASE_URL =
@@ -8,5 +9,4 @@ class Utils {
   static String getBaseUrl(final bool isTestMode) {
     return isTestMode ? _DEBUG_BASE_URL : _PROD_BASE_URL;
   }
-
 }

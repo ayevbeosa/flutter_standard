@@ -41,7 +41,6 @@ class Flutterwave {
       this.meta,
       this.style});
 
-
   /// Starts Standard Transaction
   Future<ChargeResponse> charge() async {
     final request = StandardRequest(

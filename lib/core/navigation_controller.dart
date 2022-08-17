@@ -19,12 +19,11 @@ class NavigationController {
   startTransaction(final StandardRequest request) async {
     try {
       final StandardResponse standardResponse =
-      await request.execute(this.client);
+          await request.execute(this.client);
       if (standardResponse.status == "error") {
         throw (TransactionError(standardResponse.message!));
       }
-      openBrowser(
-          standardResponse.data?.link ?? "", request.redirectUrl);
+      openBrowser(standardResponse.data?.link ?? "", request.redirectUrl);
     } catch (error) {
       print("error is $error");
       throw (error);
@@ -32,8 +31,7 @@ class NavigationController {
   }
 
   /// Opens browser with URL returned from startTransaction()
-  openBrowser(
-      final String url, final String redirectUrl,
+  openBrowser(final String url, final String redirectUrl,
       [final bool isTestMode = false]) async {
     final FlutterwaveInAppBrowser browser =
         FlutterwaveInAppBrowser(callBack: _callBack);
@@ -44,8 +42,12 @@ class NavigationController {
         crossPlatform: InAppWebViewOptions(javaScriptEnabled: true),
       ),
     );
-
-    await browser.openUrlRequest(
-        urlRequest: URLRequest(url: Uri.parse(url)), options: options);
+    if (response == null) {
+      Map<String, dynamic> errorResponse = {
+        "status": TransactionStatus.CANCELLED
+      };
+      return errorResponse;
+    }
+    return response;
   }
 }

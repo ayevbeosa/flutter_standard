@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterwave_standard/core/TransactionCallBack.dart';
-import 'package:flutterwave_standard/models/requests/standard_request.dart';
-import 'package:flutterwave_standard/models/responses/charge_response.dart';
 import 'package:flutterwave_standard/core/navigation_controller.dart';
+import 'package:flutterwave_standard/models/requests/standard_request.dart';
 import 'package:flutterwave_standard/view/view_utils.dart';
 import 'package:http/http.dart';
 
@@ -16,7 +15,8 @@ class PaymentWidget extends StatefulWidget {
   BuildContext? loadingDialogContext;
   SnackBar? snackBar;
 
-  PaymentWidget({required this.request, required this.style, required this.mainContext});
+  PaymentWidget(
+      {required this.request, required this.style, required this.mainContext});
 
   @override
   State<StatefulWidget> createState() => _PaymentState();

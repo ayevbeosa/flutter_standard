@@ -191,11 +191,8 @@ class _MyHomePageState extends State<MyHomePage> {
         fontSize: 18,
       ),
       mainBackgroundColor: Colors.indigo,
-      mainTextStyle: TextStyle(
-        color: Colors.indigo,
-        fontSize: 19,
-        letterSpacing: 2
-      ),
+      mainTextStyle:
+          TextStyle(color: Colors.indigo, fontSize: 19, letterSpacing: 2),
       dialogBackgroundColor: Colors.greenAccent,
       appBarIcon: Icon(Icons.message, color: Colors.purple),
       buttonText: "Pay $selectedCurrency${amountController.text}",
@@ -209,10 +206,16 @@ class _MyHomePageState extends State<MyHomePage> {
         name: "FLW Developer",
         phoneNumber: this.phoneNumberController.text ?? "12345678",
         email: "customer@customer.com");
-    
+
     final subAccounts = [
-      SubAccount(id: "RS_1A3278129B808CB588B53A14608169AD", transactionChargeType: "flat", transactionPercentage: 25),
-      SubAccount(id: "RS_C7C265B8E4B16C2D472475D7F9F4426A", transactionChargeType: "flat", transactionPercentage: 50)
+      SubAccount(
+          id: "RS_1A3278129B808CB588B53A14608169AD",
+          transactionChargeType: "flat",
+          transactionPercentage: 25),
+      SubAccount(
+          id: "RS_C7C265B8E4B16C2D472475D7F9F4426A",
+          transactionChargeType: "flat",
+          transactionPercentage: 50)
     ];
 
     final Flutterwave flutterwave = Flutterwave(
@@ -241,7 +244,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   String getPublicKey() {
     if (isTestMode) return "FLWPUBK_TEST-895362a74986153380262d89bfdc9b8a-X";
-      // "FLWPUBK_TEST-02b9b5fc6406bd4a41c3ff141cc45e93-X";
+    // "FLWPUBK_TEST-02b9b5fc6406bd4a41c3ff141cc45e93-X";
     return "FLWPUBK-aa4cd0b443404147d2d8229a37694b00-X";
   }
 
@@ -254,7 +257,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Widget _getCurrency() {
-    final currencies = ["NGN", "RWF", "UGX", "KES", "ZAR", "USD", "GHS", "TZS"];
+    final currencies = ["NGN", "RWF", "UGX", "ZAR", "USD", "GHS"];
     return Container(
       height: 250,
       margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
