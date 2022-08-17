@@ -10,8 +10,8 @@ dependencies:
   flutter:
     sdk: flutter
 
-  http: ^0.13.0
-  fluttertoast: ^8.0.8
+  http: ^0.13.5
+  fluttertoast: ^8.0.9
   flutter_inappwebview: ^5.4.3+7
 
 dev_dependencies:
