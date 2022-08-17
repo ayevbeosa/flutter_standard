@@ -42,12 +42,8 @@ class NavigationController {
         crossPlatform: InAppWebViewOptions(javaScriptEnabled: true),
       ),
     );
-    if (response == null) {
-      Map<String, dynamic> errorResponse = {
-        "status": TransactionStatus.CANCELLED
-      };
-      return errorResponse;
-    }
-    return response;
+
+    await browser.openUrlRequest(
+        urlRequest: URLRequest(url: Uri.parse(url)), options: options);
   }
 }

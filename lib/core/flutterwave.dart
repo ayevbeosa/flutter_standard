@@ -5,7 +5,6 @@ import 'package:flutterwave_standard/models/requests/customizations.dart';
 import 'package:flutterwave_standard/models/requests/standard_request.dart';
 import 'package:flutterwave_standard/models/responses/charge_response.dart';
 import 'package:flutterwave_standard/models/subaccount.dart';
-import 'package:flutterwave_standard/utils.dart';
 import 'package:flutterwave_standard/view/flutterwave_style.dart';
 import 'package:flutterwave_standard/view/payment_widget.dart';
 
@@ -63,7 +62,6 @@ class Flutterwave {
         builder: (context) => PaymentWidget(
           request: request,
           style: style ?? FlutterwaveStyle(),
-          mainContext: context,
         ),
       ),
     );
